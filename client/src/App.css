@@ -5,6 +5,15 @@
   text-align: center;
 }
 
+.deck {
+  outline: 1px solid red;
+  height: 100px;
+  width: 200px;
+
+}
+
+
+
 .logo {
   height: 6em;
   padding: 1.5em;
