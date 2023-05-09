@@ -9,22 +9,9 @@ import express, {
 
 import { GlobalErrorType } from './types.js';
 import path from 'path';
-import cookieParser from 'cookie-parser';
 
-import {
-  signUp,
-  logIn,
-  logOut,
-  getData,
-  updateData,
-} from './controllers/userController.js';
-import {
-  getCard,
-  makeCard,
-  checkAnswer,
-  deleteCard,
-  updateCard,
-} from './controllers/cardsController.js';
+import { signUp, logIn } from './controllers/userController';
+
 const port = 3000;
 const app: Express = express();
 
@@ -32,13 +19,13 @@ const app: Express = express();
 app.use(express.json());
 
 //cookie parser
-app.use(cookieParser());
+// app.use(cookieParser());
 
 //custom endpoint per user (authorization / deletion)
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-  return res.status(200).sendFile(path.join(__dirname, '../views/index.html'));
+  return res.status(200).sendFile(path.join(__dirname, '../client/index.html'));
 });
 
 const router: Router = express.Router();
@@ -51,25 +38,14 @@ router.post('/signup', signUp, (req: Request, res: Response) => {
 });
 
 router.post('/login', logIn, (req: Request, res: Response) => {
-  res.status(200).redirect('/homePage');
+  res.status(200).json(res.locals); //.redirect('/homePage');
 });
 
-router.get('/logout', logOut);
+// router.get('/logout', logOut);
 
-router.get('/userdatastreak', getData);
+// router.get('/userdatastreak', getData);
 
-router.put('/updateuserdata', updateData);
-
-//Middleware from Data/flashcards controller
-router.get('/flashcards', getCard);
-
-router.post('/makeflashcards', makeCard);
-
-router.get('/checkanswer', checkAnswer);
-
-router.delete('/deleteflashcard', deleteCard);
-
-router.put('/updateflashcard', updateCard);
+// router.put('/updateuserdata', updateData);
 
 //Handle invalid endpoints
 app.use((req: Request, res: Response) => res.sendStatus(404));
