@@ -1,8 +1,9 @@
 // import React from 'React';
 // import "@testing-library/jest-dom";
-import { describe, it, afterEach, expect } from '@jest/globals';
+const { describe, it, afterEach, expect } = require('@jest/globals');
 // import * as jest from '@jest/globals';
-import request from 'supertest';
+// import {jest} from '@jest/globals'
+const request = require('supertest');
 const server = 'http://localhost:3000';
 
 //request(server).post('/api/signup').send({ username: testUser, password: testPass, arn: testArn, region: testRegion }).expect(200)
@@ -27,20 +28,20 @@ describe('Testing Suite for Routes', () => {
       .send({ username: testUser, password: testPassword });
     it('Gives a status code of 200', () => expect(response.status).toBe(200));
 
-    it('Successfully matches ');
+    // it('Successfully matches ');
   });
 
-  describe('GET/get flashcards', () => {});
+  //   describe('GET/get flashcards', () => {});
 
-  describe('POST/make flashcards', () => {});
+  //   describe('POST/make flashcards', () => {});
 
-  describe('GET/check answers', () => {});
+  //   describe('GET/check answers', () => {});
 
-  describe('DELETE/delete a flashcard', () => {});
+  //   describe('DELETE/delete a flashcard', () => {});
 
-  describe('PUT/update a flashcard', () => {});
+  //   describe('PUT/update a flashcard', () => {});
 
-  describe('GET/user data/streak on login', () => {});
+  //   describe('GET/user data/streak on login', () => {});
 
-  describe('PUT/update the user data/streak', () => {});
+  //   describe('PUT/update the user data/streak', () => {});
 });
