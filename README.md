@@ -4,6 +4,11 @@
 
 ---
 
+## Our Tech Stack
+
+PostgreSQL, Express(.js), Typescript, React, React Router, Redux, Node.js, CSS/SCSS + Sass, Jest, Supertest
+---
+
 ## Contribute
 
 If you want to contrbute to this project, that would be absolutely wonderful. We will consider all pull requests.
