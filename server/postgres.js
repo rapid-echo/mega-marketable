@@ -7,6 +7,7 @@ const pool = new Pool({
 });
 console.log('inside pg file');
 pool.connect();
+console.log('connect to db');
 
 //DEFINE AND CREATE SCHEMA
 const createSchemaQuery = 'CREATE SCHEMA IF NOT EXISTS mega_marketable_schema';

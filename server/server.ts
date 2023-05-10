@@ -8,6 +8,7 @@ import express, {
 } from 'express';
 
 import { GlobalErrorType } from './types.js';
+
 import path from 'path';
 
 import { signUp, logIn } from './controllers/userController';
