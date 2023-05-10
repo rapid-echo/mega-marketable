@@ -14,3 +14,7 @@ export const nextCardActionCreator = () => ({
 export const prevCardActionCreator = () => ({
   type: types.PREV_CARD,
 });
+
+export const nextCardActionCreator = () => ({
+  type: types.NEXT_CARD,
+});
