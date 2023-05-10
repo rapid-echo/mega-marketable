@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/homepage/HomePage';
 import FlashCardPage from './pages/flash-card-page/FlashCardPage';

@@ -1,4 +1,4 @@
-import * as types from './actionTypes.ts';
+import * as types from './actionTypes';
 
 export const updateDeckActionCreator = (
   DeckName: 'SDI' | 'Algos' | 'Self'
@@ -13,8 +13,4 @@ export const nextCardActionCreator = () => ({
 
 export const prevCardActionCreator = () => ({
   type: types.PREV_CARD,
-});
-
-export const nextCardActionCreator = () => ({
-  type: types.NEXT_CARD,
 });

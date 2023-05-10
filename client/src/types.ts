@@ -44,3 +44,12 @@ export type Deck = {
   Algos: Cards[];
   Self: Cards[];
 };
+
+export type LoginBodyType = {
+  username: string;
+  password: string;
+};
+
+export type LoginResponseType = {
+  user: boolean;
+};

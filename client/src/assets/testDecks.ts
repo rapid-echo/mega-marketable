@@ -60,5 +60,3 @@ const testDeck: Deck = {
 };
 
 export default testDeck;
-
-export default testDeck;

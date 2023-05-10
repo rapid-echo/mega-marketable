@@ -5,6 +5,7 @@ import PageButton from '../components/PageButton';
 import * as actions from '../../../actions/action';
 import { FlashCardContainerProps, Cards } from '../../../types';
 import { AppDispatch, RootState } from '../../../store';
+import React from 'react';
 
 const mapStateToProps = (state: any) => ({
   deckName: state.flashcards.deckName as string,
