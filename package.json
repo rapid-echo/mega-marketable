@@ -1,0 +1,24 @@
+{
+  "name": "mega-marketable",
+  "version": "1.0.0",
+  "description": "Software engineering hiring prep",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd ./server && node server.js",
+    "double": "cd ./server && npm run start && ../client npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeamEevee39/mega-marketable.git"
+  },
+  "author": "Hazel Bolivar, Ian Flynn, John Choi, John Lee, Yining Wang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TeamEevee39/mega-marketable/issues"
+  },
+  "homepage": "https://github.com/TeamEevee39/mega-marketable#readme",
+  "dependencies": {
+    "@types/react": "^18.2.6"
+  }
+}
