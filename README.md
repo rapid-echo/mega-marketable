@@ -7,7 +7,6 @@
 ## Our Tech Stack
 
 PostgreSQL, Express(.js), Typescript, React, React Router, Redux, Node.js, CSS/SCSS + Sass, Jest, Supertest
----
 
 ## Contribute
 
