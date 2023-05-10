@@ -2,17 +2,12 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LoginBodyType, LoginResponseType } from '../../../types';
 
-//onClick={(e: React.MouseEvent<HTMLButtonElement>) => loginSubmit(e)}
-//^button onClick functionality stuff idk
-//define LoginProps in types.ts
-//props: LoginProps
-function Login() {
+const Login = () => {
   const [username, setUsername] = useState('' as string);
   const [password, setPassword] = useState('' as string);
-
   const navigate = useNavigate();
 
-  function loginSubmit(e: React.MouseEvent<HTMLButtonElement>) {
+  const loginSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
     fetch('/api/login', {
@@ -28,7 +23,7 @@ function Login() {
       .then((res): Promise<LoginResponseType> => res.json())
       .then((res) => {
         if (res.user) {
-          navigate('/'); // Navigates to Home page on successful signin
+          navigate('/home'); // Navigates to Home page on successful signin
         } else {
           const invalidDisplay = document.getElementById('invalid-display');
           if (invalidDisplay) {
@@ -39,35 +34,27 @@ function Login() {
       .catch((err) => {
         console.log('Error in login fetch request:', err);
       });
-  }
+  };
 
   return (
-    <div className='login-page'>
+    <div id='login-page' className='pages'>
       <div id='login-container'>
-        <h1>QUIZLEY</h1>
+        <h1>Mega Marketable</h1>
         <div id='invalid-display'></div>
-        <form id='input-form'>
-          <div id='input-container'>
+        <form>
+          <div>
             <input
-              className='input-fields'
-              id='login-username'
-              type='text'
+              type='username'
               placeholder='username'
-              onChange={(e) => {
-                setUsername(e.target.value);
-              }}
+              onChange={(e) => setUsername(e.target.value)}
             />
             <input
-              className='input-fields'
-              id='login-password'
               type='password'
               placeholder='password'
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <div className='buttons'>
+          <div>
             <button id='signup-button'>Sign up</button>
             <button
               id='login-button'
@@ -81,6 +68,6 @@ function Login() {
       </div>
     </div>
   );
-}
+};
 
 export default Login;
