@@ -5,6 +5,7 @@ import testDeck from '../assets/testDecks';
 const initialState = {
   deckName: 'Test',
   currentCardIndex: 0,
+  display: 'front',
   cards: [
     {
       card: 1,
@@ -30,6 +31,7 @@ const initialState = {
 const flashCardsReducer = (state = initialState, action: Action) => {
   let newCards: Cards[];
   let newIndex: number;
+  let newDisplay: 'front' | 'back';
 
   switch (action.type) {
     case types.UPDATE_DECK:
@@ -37,6 +39,8 @@ const flashCardsReducer = (state = initialState, action: Action) => {
 
       newIndex = 0;
       return {
+        ...state,
+        display: 'front',
         currentCardIndex: newIndex,
         deckName: action.payload,
         cards: newCards,
@@ -51,6 +55,7 @@ const flashCardsReducer = (state = initialState, action: Action) => {
 
       return {
         ...state,
+        display: 'front',
         currentCardIndex: newIndex,
       };
 
@@ -62,7 +67,15 @@ const flashCardsReducer = (state = initialState, action: Action) => {
 
       return {
         ...state,
+        display: 'front',
         currentCardIndex: newIndex,
+      };
+
+    case types.UPDATE_DISPLAY:
+      newDisplay = state.display === 'front' ? 'back' : 'front';
+      return {
+        ...state,
+        display: newDisplay,
       };
 
     default: {

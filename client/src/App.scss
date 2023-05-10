@@ -1,3 +1,4 @@
+$primary-color: lightgreen;
 * {
   margin: 0;
   padding: 0;
@@ -9,102 +10,134 @@
   min-height: 100vh;
   color: black;
 }
-#homepage-page {
-  padding-top: 100px;
-  #nav-bar {
-    width: 100vw;
-    background-color: salmon;
-    position: fixed;
-    top: 0;
-    left: 0;
-    text-align: center;
-  }
-  #deck-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-
-
-.login-page {
-  background-color: white;
+#nav-bar {
   width: 100vw;
-  height: 100vh;
-  color: black;
+  background-color: darken($primary-color, 10%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  padding: 5px;
+  font-size: 1.5rem;
+}
+#login-page {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  background-color: lighten($primary-color, 20%);
+  padding: 20px;
   #login-container {
-    border: 5px solid brown;
-    width: 40vw;
-    height: 20vw;
-    background-color: salmon;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 400px;
     text-align: center;
-    justify-content: space-around;
-}
-  .input-fields{
-    background-color: white;
-    width: 50%;
-    height: 40%;
-    color: black;
-    font-size: 120%;
+    background-color: $primary-color;
+    border: 5px solid darken($primary-color, 20%);
+    border-radius: 10px;
+    > * {
+      margin-top: 10px;
+    }
+    h1 {
+      font-size: 2.7rem;
+    }
+    form {
+      > * {
+        margin-top: inherit;
+      }
+      div:first-child {
+        > * {
+          margin-top: inherit;
+        }
+        input {
+          color: black;
+          background-color: white;
+          font-size: 1.2rem;
+          border-radius: 8px;
+          padding: 8px 12px;
+          width: 90%;
+        }
+      }
+      div:last-child {
+        margin-bottom: 10px;
+        button:first-child {
+          margin-right: 2%;
+        }
+        button {
+          width: 44%;
+        }
+      }
+    }
   }
-  #input-container {
-    height: 30vh;
+}
+
+#homepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: lighten($primary-color, 20%);
+  #deck-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    width: 100%;
+    padding: 0 20px;
+    button {
+      outline: 1px solid darken($primary-color, 20%);
+      height: 10rem;
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+      background-color: darken($primary-color, 50%);
+    }
+    button:last-child {
+      margin-bottom: 0;
+    }
   }
-  #input-form {
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .buttons{
-
-    justify-content: space-between;
-  }
-  
 }
 
-
-.deck {
-  outline: 1px solid red;
-  height: 100px;
-  width: 200px;
-
-}
-
-
-=======
 #flash-card-page {
-  background-color: red;
-
+  #nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lighten($primary-color, 20%);
+    button {
+      padding: 0.4rem 1rem;
+      font-size: 1.2rem;
+      background-color: darken($primary-color, 50%);
+    }
+  }
+  background-color: darken($primary-color, 50%);
+  // padding-top: 100px;
   #flash-card-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: larger;
     justify-content: space-between;
-    background: pink;
-    padding: 0.5rem 1rem;
-    min-height: 100vh;
+    padding: 5rem 1rem 1rem;
+    height: 100vh;
+    p {
+      background-color: $primary-color;
+      border-radius: 10px;
+      padding: 0 20px;
+      text-align: center;
+    }
+    #deck-title {
+      width: 80%;
+    }
 
     .flashcard {
       position: relative;
       display: flex;
       flex-direction: column;
 
-      background-color: green;
+      background-color: lighten($primary-color, 20%);
       border-radius: 8px;
       justify-content: center;
       align-items: center;
@@ -113,18 +146,19 @@
       height: 300px;
       p {
         position: absolute;
-        top: 0;
+        top: 8px;
         right: 8px;
       }
     }
     #left-right {
       display: flex;
       justify-content: space-evenly;
-      background-color: orange;
       width: 100%;
-      // margin-bottom: 20px;
+      margin-bottom: 20px;
       button {
-        width: 30%;
+        width: 40%;
+        background-color: $primary-color;
+        color: black;
       }
     }
   }

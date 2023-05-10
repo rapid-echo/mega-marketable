@@ -18,8 +18,10 @@ export type FlashCardContainerProps = {
   deckName: string;
   cards: Cards[];
   currentCardIndex: number;
+  display: 'front' | 'back';
   prevCard: () => void;
   nextCard: () => void;
+  updateDisplay: () => void;
 };
 
 export type FlashNavButtonProps = {
@@ -32,6 +34,8 @@ export type PageButtonProps = null;
 export type FlashCardProps = {
   index: number;
   cards: Cards[];
+  display: 'front' | 'back';
+  handleClick: () => void;
 };
 
 export type Action = {
