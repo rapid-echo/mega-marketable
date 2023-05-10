@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.pages {
+  background-color: white;
+  width: 100vw;
+  min-height: 100vh;
+  color: black;
+}
+#homepage-page {
+  padding-top: 100px;
+  #nav-bar {
+    width: 100vw;
+    background-color: salmon;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+  }
+  #deck-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+#flash-card-page {
+  background-color: red;
+
+  #flash-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: larger;
+    justify-content: space-between;
+    background: pink;
+    padding: 0.5rem 1rem;
+    min-height: 100vh;
+
+    .flashcard {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+
+      background-color: green;
+      border-radius: 8px;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      min-width: 100%;
+      height: 300px;
+      p {
+        position: absolute;
+        top: 0;
+        right: 8px;
+      }
+    }
+    #left-right {
+      display: flex;
+      justify-content: space-evenly;
+      background-color: orange;
+      width: 100%;
+      // margin-bottom: 20px;
+      button {
+        width: 30%;
+      }
+    }
+  }
+}
