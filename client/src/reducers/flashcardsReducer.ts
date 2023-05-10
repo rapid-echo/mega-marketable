@@ -40,6 +40,7 @@ const flashCardsReducer = (state = initialState, action: Action) => {
       newIndex = 0;
       return {
         ...state,
+        display: 'front',
         currentCardIndex: newIndex,
         deckName: action.payload,
         cards: newCards,

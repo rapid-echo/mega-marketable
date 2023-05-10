@@ -125,7 +125,6 @@ const testDeck: Deck = {
       keep: true,
     },
     { card: 7, front: 'question 2', back: 'answer 2', keep: true },
-    { card: 8, front: 'question 2', back: 'answer 2', keep: true },
   ],
 };
 
