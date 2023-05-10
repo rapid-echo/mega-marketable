@@ -1,13 +1,11 @@
-import React from 'react';
 import { DeckProps } from '../../../types';
 
-
-function Deck(props: DeckProps) {
+const Deck = (props: DeckProps) => {
   return (
-    <button className='deck'>
-      {props.title}
+    <button className='deck' onClick={() => props.handleClick(props.name)}>
+      {props.name} Questions
     </button>
-  )
-}
+  );
+};
 
 export default Deck;
