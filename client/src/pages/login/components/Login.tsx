@@ -42,31 +42,41 @@ function Login() {
   }
 
   return (
-    <div id="login-container">
-      <div id="invalid-display"></div>
-      <form>
-        <input
-          id="login-username"
-          type="text"
-          placeholder="username"
-          onChange={(e) => {
-            setUsername(e.target.value);
-          }}
-        />
-
-        <input
-          id="login-password"
-          type="password"
-          placeholder="password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-        />
-        <button>Sign up</button>
-        <button type="submit" onClick={(e) => loginSubmit(e)}>
-          Login
-        </button>
-      </form>
+    <div className ="login-page">
+      <div id="login-container">
+          <h1>
+            QUIZLEY
+          </h1>
+        <div id="invalid-display"></div>
+        <form id = "input-form">
+          <div id = "input-container">
+          <input
+            className = "input-fields"
+            id="login-username"
+            type="text"
+            placeholder="username"
+            onChange={(e) => {
+              setUsername(e.target.value);
+            }}
+          />
+          <input
+            className = "input-fields"
+            id="login-password"
+            type="password"
+            placeholder="password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+          </div>
+          <div className = "buttons">
+            <button id='signup-button'>Sign up</button>
+            <button id='login-button' type="submit" onClick={(e) => loginSubmit(e)}>
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
