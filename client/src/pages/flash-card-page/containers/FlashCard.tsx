@@ -1,19 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { FlashCardProps } from '../../../types';
 
 function FlashCard(props: FlashCardProps) {
+  const [showAnswer, setShowAnswer] = useState(false);
+
+  const handleClick = () => {
+    setShowAnswer(!showAnswer);
+  };
+
   return (
-    <div>
-      index: {props.index}
-      <br />
-      {/* cards: {props.cards} */}
-      {/* <br /> */}
-      deckName: {props.deck}
-      <br />
-      I am a flash card
+    <div className='flashcard' onClick={() => handleClick()}>
+      <p>
+        {props.index + 1} of {props.cards.length}
+      </p>
+      {showAnswer
+        ? props.cards[props.index].back
+        : props.cards[props.index].front}
     </div>
-  )
+  );
 }
 
-export default FlashCard
+export default FlashCard;
