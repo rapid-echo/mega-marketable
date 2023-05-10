@@ -1,11 +1,9 @@
-// import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../actions/action';
-import { Action } from '../../../types';
 import Deck from '../components/Deck';
-import { AppDispatch } from '../../../store.ts';
+import { AppDispatch } from '../../../store';
 import { DeckContainerProps } from '../../../types';
 
 const mapDispatchToProps = (dispatch: AppDispatch) => ({

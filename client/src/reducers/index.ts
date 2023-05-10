@@ -6,5 +6,3 @@ const reducers = combineReducers({
 });
 
 export default reducers;
-
-export default reducers;

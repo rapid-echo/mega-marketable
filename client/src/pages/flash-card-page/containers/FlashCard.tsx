@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { FlashCardProps } from '../../../types';
+import React from 'react';
 
 function FlashCard(props: FlashCardProps) {
   const [showAnswer, setShowAnswer] = useState(false);

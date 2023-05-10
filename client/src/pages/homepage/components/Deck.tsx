@@ -1,3 +1,4 @@
+import React from 'react';
 import { DeckProps } from '../../../types';
 
 const Deck = (props: DeckProps) => {

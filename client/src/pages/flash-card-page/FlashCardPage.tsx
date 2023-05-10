@@ -1,3 +1,4 @@
+import React from 'react';
 import FlashCardContainer from './containers/FlashCardContainer';
 
 function FlashCardPage() {
