@@ -5,8 +5,8 @@ import FlashCardContainer from './containers/FlashCardContainer';
 
 function FlashCardPage() {
   return (
-    <div>
-      
+    <div id="flash-card-page" className='pages'>
+      <FlashCardContainer />
     </div>
   )
 }

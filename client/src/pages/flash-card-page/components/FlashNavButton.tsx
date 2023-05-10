@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FlashNavButtonProps } from '../../../types';
 
-function FlashNavButton() {
+function FlashNavButton(props: FlashNavButtonProps) {
   return (
-    <div>
-      
-    </div>
+    <button onClick={props.handleClick}>
+       {props.text}
+    </button>
   )
 }
 

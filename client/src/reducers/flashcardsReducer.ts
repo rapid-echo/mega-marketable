@@ -5,7 +5,7 @@ import testDeck from '../assets/testDecks';
 const initialState = {
   deckName: '',
   currentCardIndex: 0,
-  cards: [],
+  cards: [{card: 1, front: 'question 1', back: 'answer 1', keep: true}],
 }
 
 const flashCardsReducer = (state = initialState, action: Action) => {
@@ -21,15 +21,26 @@ const flashCardsReducer = (state = initialState, action: Action) => {
     }
 
     case types.NEXT_CARD:
-    if (state.currentCardIndex === state.cards.length - 1) {
-      newIndex = 0;
-    } else {
-      newIndex = state.currentCardIndex++;
-    }
+      console.log(state.cards.length, 'up')
+      console.log(state.cards)
+    newIndex = state.currentCardIndex === state.cards.length - 1 ? 0 : state.currentCardIndex + 1;
+    console.log(newIndex, 'new index')
    
     return{
       ...state,
       currentCardIndex: newIndex
+    }
+
+    case types.PREV_CARD: 
+    console.log(state.cards.length, 'reduction')
+    console.log(state.cards)
+    newIndex = state.currentCardIndex === 0 ? state.cards.length - 1 : state.currentCardIndex - 1;
+    
+
+    return {
+      ...state,
+      currentCardIndex: newIndex
+
     }
 
     default: {

@@ -1,7 +1,8 @@
-import React from 'react';
+// import React from 'react';
 import { Link } from 'react-router-dom';
+import { PageButtonProps } from '../../../types';
 
-function PageButton() {
+function PageButton(props: PageButtonProps) {
   return (
     <div>
       

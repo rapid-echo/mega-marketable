@@ -1,11 +1,10 @@
 export type DeckProps = {
-    title: string
-    onClick: (deckName: string) => void;
+    name: "SDI" | "Algos" | "Self",
+    handleClick: (deckName: "SDI" | "Algos" | "Self") => void
 }
 
-export type Action = {
-    type: string,
-    payload: "SDI" | "Algos" | "Self"
+export type DeckContainerProps = {
+    updateDeck: (deckName: "SDI" | "Algos" | "Self") => void
 }
 
 export type Cards = {
@@ -14,6 +13,33 @@ export type Cards = {
     back: string,
     keep: boolean
 }
+
+export type FlashCardContainerProps = {
+    deckName: string,
+    cards: Cards[],
+    currentCardIndex: number,
+    prevCard: () => void,
+    nextCard: () => void
+}
+
+export type FlashNavButtonProps = {
+    handleClick: () => void,
+    text: string
+}
+
+export type PageButtonProps = null
+
+export type FlashCardProps = {
+    index: number,
+    cards:  Cards[],
+    deck: string,
+}
+
+export type Action = {
+    type: string,
+    payload: "SDI" | "Algos" | "Self"
+}
+
 
 export type Deck = {
   SDI: Cards[],

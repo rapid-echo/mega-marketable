@@ -9,3 +9,7 @@ export const updateDeckActionCreator = (DeckName: "SDI" | "Algos" | "Self") => (
 export const nextCardActionCreator = () => ({
     type: types.NEXT_CARD
 })
+
+export const prevCardActionCreator = () => ({
+    type: types.PREV_CARD
+})

@@ -1,37 +1,37 @@
 // import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../actions/action';
 import { Action } from '../../../types';
 import Deck from '../components/Deck';
+import { AppDispatch } from '../../../store.ts';
+import { DeckContainerProps } from '../../../types';
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch: AppDispatch) => ({
   updateDeck: (deckName: "SDI" | "Algos" | "Self") => dispatch(actions.updateDeckActionCreator(deckName)),
 })
 
-function DeckContainer() {
+const DeckContainer = (props: DeckContainerProps) => {
   const navigate = useNavigate()
-  const [decks, setDecks] = useState(['SDI Questions','Algorithm Questions', 'Self Questions']);
+  //const decks = ['SDI','Algos', 'Self'];
 
 
-  const handleClick = (DeckName: string):void => {
-    /////update state's currently selected deck to be deck name
+  const handleClick = (deckName: "SDI" | "Algos" | "Self"):void => {
+    console.log(deckName)
+    props.updateDeck(deckName)
     navigate('/flashcards');
   }
 
-  const decksArray = decks.map(el=>{
-    return <Deck title={el} handleClick={handleClick} />
-  }) 
-
+  //const decksArray = decks.map((el: 'SDI'|'Algos'| 'Self') => <Deck name={el} handleClick={handleClick} />)
+  
   return (
     <div id='deck-container'>
-      {decksArray}
-      {/* <Deck title ={'SDI Questions'} onClick={handleClick}/>
-      <Deck title={'Algorithm Questions'} onClick={handleClick}/>
-      <Deck title={'Self Questions'} onClick={handleClick}/> */}
+      <Deck name={"SDI"} handleClick={handleClick}/>
+      <Deck name={"Algos"} handleClick={handleClick}/>
+      <Deck name={"Self"} handleClick={handleClick}/>
     </div>
   )
 }
 
-export default connect(mapDispatchToProps)(DeckContainer);
+export default connect(null, mapDispatchToProps)(DeckContainer);
