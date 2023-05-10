@@ -1,7 +1,7 @@
 // import React from 'react';
 // import { Link } from 'react-router-dom';
 // import Deck from './containers/Deck.tsx';
-import DeckContainer from './containers/DeckContainer.tsx';
+import DeckContainer from './containers/DeckContainer';
 import { useNavigate } from 'react-router-dom';
 
 

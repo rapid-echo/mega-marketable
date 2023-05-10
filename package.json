@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/TeamEevee39/mega-marketable/issues"
   },
-  "homepage": "https://github.com/TeamEevee39/mega-marketable#readme"
+  "homepage": "https://github.com/TeamEevee39/mega-marketable#readme",
+  "dependencies": {
+    "@types/react": "^18.2.6"
+  }
 }
